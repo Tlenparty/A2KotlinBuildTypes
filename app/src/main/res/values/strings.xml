@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">A2KotlinBuildTypes</string>
+    <string name="app_info">debug_version</string>
 </resources>
