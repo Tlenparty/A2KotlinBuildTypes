@@ -1,39 +1,39 @@
 # Android Build Variants
 
-Небольшой Android-проект на Kotlin, демонстрирующий настройку вариантов сборки
-в Gradle: собственные build types, product flavors и переопределение кода и
-ресурсов в отдельных source sets.
+A small Android project in Kotlin that demonstrates build variant configuration
+in Gradle: custom build types, product flavors, and overriding code and
+resources in separate source sets.
 
-## Возможности
+## Features
 
-- Build types `debug`, `release`, `staging`, `beta`: у каждого свой
-  `versionNameSuffix` и поле `BuildConfig.TYPE`; `staging` и `beta` наследуют
-  настройки `debug` через `initWith`
-- Product flavors `freeConfig` и `paid` (измерение `version`) с суффиксами версии
+- Build types `debug`, `release`, `staging`, `beta`: each has its own
+  `versionNameSuffix` and `BuildConfig.TYPE` field; `staging` and `beta` inherit
+  the `debug` settings via `initWith`
+- Product flavors `freeConfig` and `paid` (the `version` dimension) with version suffixes
   `.free` / `.paid`
-- Своя `MainActivity` для каждого flavor — показывает тост «Free config» /
-  «Paid config»
-- Переопределение ресурсов: отдельные разметки для `freeConfigDebug`, `paidDebug`
-  и `staging`, свои строки для `staging`
+- A separate `MainActivity` for each flavor, showing a toast "Free config" /
+  "Paid config"
+- Resource overrides: separate layouts for `freeConfigDebug`, `paidDebug`
+  and `staging`, and custom strings for `staging`
 
-## Структура
+## Project structure
 
 ```
 app/src/
-├── main/               # манифест, базовая разметка и ресурсы
-├── freeConfig/         # MainActivity для free-версии
-├── paid/               # MainActivity для paid-версии
-├── freeConfigDebug/    # разметка для freeConfigDebug
-├── paidDebug/          # разметка для paidDebug
-└── staging/            # разметка и строки для staging
+├── main/               # manifest, base layout and resources
+├── freeConfig/         # MainActivity for the free version
+├── paid/               # MainActivity for the paid version
+├── freeConfigDebug/    # layout for freeConfigDebug
+├── paidDebug/          # layout for paidDebug
+└── staging/            # layout and strings for staging
 ```
 
-## Сборка
+## Build
 
-Требуется JDK 11–17 и Android SDK 30.
+Requires JDK 11–17 and Android SDK 30.
 
 ```bash
-./gradlew assembleFreeConfigDebug    # или assemblePaidStaging, assembleRelease и т.д.
+./gradlew assembleFreeConfigDebug    # or assemblePaidStaging, assembleRelease, etc.
 ```
 
 APK: `app/build/outputs/apk/<flavor>/<buildType>/`.
