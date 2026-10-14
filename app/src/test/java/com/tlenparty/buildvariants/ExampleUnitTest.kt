@@ -1,4 +1,4 @@
-package com.geekbrains.a2kotlinbuildtypes
+package com.tlenparty.buildvariants
 
 import org.junit.Test
 

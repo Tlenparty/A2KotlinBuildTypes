@@ -1,4 +1,4 @@
-package com.geekbrains.a2kotlinbuildtypes
+package com.tlenparty.buildvariants
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.geekbrains.a2kotlinbuildtypes", appContext.packageName)
+        assertEquals("com.tlenparty.buildvariants", appContext.packageName)
     }
 }

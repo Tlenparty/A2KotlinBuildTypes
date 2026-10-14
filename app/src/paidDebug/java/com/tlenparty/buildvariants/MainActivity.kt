@@ -1,4 +1,4 @@
-package com.geekbrains.a2kotlinbuildtypes
+package com.tlenparty.buildvariants
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
